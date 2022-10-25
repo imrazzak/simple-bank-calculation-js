@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Banking Calculation JavaScript</title>
+
+    <!-- TailwindCSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header class="bg-white py-5 mt-5">
+        <div class="w-3/4 mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="menu">
+                    <ion-icon name="grid-outline" class="text-3xl font-semibold cursor-pointer hover:text-emerald-600">
+                    </ion-icon>
+                </div>
+                <div class="relative">
+                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block py-3 px-4 pl-10 w-full text-md text-gray-900 bg-gray-200 rounded border border-gray-300 focus:outline focus:outline-2 focus:outline-emerald-500"
+                        placeholder="Search" required="">
+                </div>
+            </div>
+            <div class="flex items-center gap-10">
+                <div class="flex gap-4 items-center">
+                    <div class="notification-icon">
+                        <ion-icon name="notifications-outline" class="text-3xl hover:text-emerald-600 cursor-pointer">
+                        </ion-icon>
+
+                    </div>
+                    <div class="message-icon">
+                        <ion-icon name="chatbox-outline"
+                            class="text-3xl hover:text-emerald-600 cursor-pointer messages-icon"></ion-icon>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="flex gap-2 cursor-pointer">
+                    <img class="h-14 w-14 rounded-full border-2 border-white shadow" src="/images/profile.jpeg">
+                    <div>
+                        <h2 class="text-lg font-semibold text-slate-800">Suborna Sumi</h2>
+                        <h2 class="text-gray-500">suborna@hotmail.com</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container w-3/4 mx-auto my-16">
+        <section class="flex space-x-4 text-white">
+            <div class="w-1/3 bg-emerald-500 rounded-lg p-12">
+                <h4 class="text-xl mb-4">Balance</h4>
+                <h2 class="text-xl font-bold flex items-center gap-2">&#2547;
+                    <span class="text-4xl font-semibold" id="total-balance">100</span>
+                </h2>
+            </div>
+            <div class="w-1/3 bg-gray-100 text-gray-900 rounded-lg p-12">
+                <h4 class="text-xl mb-4">Deposit</h4>
+                <h2 class="text-xl font-bold flex items-center gap-2">&#2547;
+                    <span class="text-4xl font-semibold" id="deposit-balance">00</span>
+                </h2>
+            </div>
+            <div class="w-1/3 bg-gray-100 text-gray-900 rounded-lg p-12">
+                <h4 class="text-xl mb-4">Withdraw</h4>
+                <h2 class="text-xl font-bold flex items-center gap-2">&#2547;
+                    <span class="text-4xl font-semibold" id="withdraw-balance">00</span>
+                </h2>
+            </div>
+        </section>
+        <section class="flex my-16 space-x-10 items-center">
+            <div class="w-1/2 bg-gray-100 p-12 rounded">
+                <h2 class="text-3xl font-semibold mb-2">Cash Deposit</h2>
+                <p class="mb-4 text-gray-600">
+                    The minimum deposit amount is BDT 500.00
+                </p>
+                <input class="w-full border-2 outline-none px-4 py-3 rounded bg-slate-50 focus:border-teal-600/50"
+                    type="text" id="deposit-field" placeholder="500.00">
+                <button
+                    class="w-full block bg-teal-600 text-white font-semibold py-2 px-5 mt-5 rounded shadow shadow-teal-600/50"
+                    id="deposit-button">Deposit</button>
+                <div class="hidden bg-rose-100 p-4 mt-5 rounded text-rose-900">
+                    You cannot deposit less than BDT 500.00
+                </div>
+            </div>
+            <div class="w-1/2 bg-gray-100 p-12 rounded">
+                <h2 class="text-3xl font-semibold mb-2">Cash Withdraw</h2>
+                <p class="mb-4 text-gray-600">
+                    The minimum withdraw amount is BDT 100.00
+                </p>
+                <input class="w-full border-2 outline-none px-4 py-3 rounded bg-slate-50 focus:border-emerald-600/50"
+                    type="text" id="withdraw-field" placeholder="100.00">
+                <button
+                    class="w-full block bg-emerald-600 text-white font-semibold py-2 px-5 mt-5 rounded shadow shadow-teal-600/50"
+                    id="withdraw-button">Withdraw</button>
+                <div class="hidden bg-emerald-200/50 p-4 mt-5 rounded text-emerald-900">
+                    Successfully withdrawn BDT 500.00
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/main.js"></script>
+
+    <!-- Ionic Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
